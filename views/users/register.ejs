@@ -1,0 +1,31 @@
+<%- include ../paticals/header.ejs %>
+<div class="container">
+    <div class="row" style="padding-top: 100px;">
+        <div class="col-sm-6 col-sm-push-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form method="post">
+                        <% if(typeof error !== 'undefined'){ %>
+                        <div class="label label-danger"><%- error %></div>
+                        <% } %>
+                        <div class="form-group">
+                            <label>帳號</label>
+                            <input type="text" class="form-control" name="account">
+                        </div>
+                        <div class="form-group">
+                            <label>密碼</label>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                        <div class="form-group">
+                            <%- captcha %>
+                        </div>
+                        <div class="form-group clearfix">
+                            <button class="btn btn-default pull-right">註冊</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../paticals/footer.ejs %>
