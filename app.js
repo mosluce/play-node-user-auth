@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('./configs/db');
 var flash = require('connect-flash');
-var session = require('express-session');
+var passportConfig = require('./passport');
 
 var routes = require('./routes');
 
@@ -25,11 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
-app.use(session({
-    secret: 'JKdslajdslsjljlckdjh;wchdscsdhljkcshd',
-    resave: false,
-    saveUninitialized: false
-}));
+passportConfig(app);
 
 app.use('/', flash(), db, routes);
 
