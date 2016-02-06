@@ -8,7 +8,7 @@ router.use('/users', require('./users'));
 router.use('/roles', require('./roles'));
 
 /* GET home page. */
-router.get('/', pipe.basic, function (req, res, next) {
+router.get('/', pipe.cookieConverter, pipe.basic, function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
 

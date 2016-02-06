@@ -3,5 +3,6 @@ var Schema = mongoose.Schema;
 
 module.exports = new Schema({
     account: String,
-    password: String
+    password: String,
+    token: String
 });
